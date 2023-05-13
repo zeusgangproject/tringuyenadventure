@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jump Game</title>
+        <style>
+            canvas {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #options {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                display: none;
+            }
+            #inputBox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                display: none;
+            }
+            input[type="text"] {
+                font-size: 20px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                margin: 10px;
+            }
+            button[type="submit"] {
+                font-size: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: none;
+                background-color: #333333;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <div id="options">
+            <h3>Uh oh, you fell in the dirt!</h3>
+            <p>What do you want to do?</p>
+            <button onclick="optionOne()">Option 1</button>
+            <button onclick="optionTwo()">Option 2</button>
+        </div>
+        <div id="inputBox">
+            <h3>Make a wish:</h3>
+            <form onsubmit="submitIn
+put(event)">
+                <input type="text" id="wishInput" placeholder="Enter your wish...">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E</script>
+        <script src="game.js"></script>
+    </body>
+</html>
