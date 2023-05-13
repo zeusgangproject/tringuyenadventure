@@ -1,66 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Jump Game</title>
-        <style>
-            canvas {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            #options {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                display: none;
-            }
-            #inputBox {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                display: none;
-            }
-            input[type="text"] {
-                font-size: 20px;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #ddd;
-                margin: 10px;
-            }
-            button[type="submit"] {
-                font-size: 20px;
-                padding: 10px 20px;
-                border-radius: 5px;
-                border: none;
-                background-color: #333333;
-                color: #ffffff;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <canvas id="canvas"></canvas>
-        <div id="options">
-            <h3>Uh oh, you fell in the dirt!</h3>
-            <p>What do you want to do?</p>
-            <button onclick="optionOne()">Option 1</button>
-            <button onclick="optionTwo()">Option 2</button>
+<head>
+    <title>Parkour Game</title>
+    <style>
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #player {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #msg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+        #popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #mp4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+        #ending {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: none;
+        }
+        #address {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <img id="player" src="image.png" />
+        <div id="msg">
+            <h2>Oi khong tri nga roi nen cuu tri khong:</h2>
+            <button id="option1">Ke me tri</button>
+            <button id="option2">Cuu tri</button>
         </div>
-        <div id="inputBox">
-            <h3>Make a wish:</h3>
-            <form onsubmit="submitIn
-put(event)">
-                <input type="text" id="wishInput" placeholder="Enter your wish...">
-                <br>
-                <button type="submit">Submit</button>
-            </form>
+        <div id="popup"></div>
+        <div 
+            id="mp4">
+            <video src="win.mp4" loop autoplay></video>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E</script>
-        <script src="game.js"></script>
-    </body>
+        <div id="ending">
+            <h2>PC may sieu ngon</h2>
+            <p id="address"></p>
+        </div>
+    </div>
+<script src="game.js"></script>
+</body>
 </html>
