@@ -1,78 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Parkour Game</title>
-    <style>
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-        }
-        #player {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-        #msg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            display: none;
-        }
-        #popup {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            display: none;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        #mp4 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            display: none;
-        }
-        #ending {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            display: none;
-        }
-        #address {
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<title> Tri Nguyen Adventure</title>
+<meta content="MYO,MYOTee" name="keywords">
+<meta name="description" content="dit me tri">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<style>
+	html,body{
+		padding:0;
+		margin:0;
+		font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+		font-size:12px;
+		font-weight:normal;
+	}
+	#container{
+		/*border:1px solid red;*/
+	}
+	#gameDiv{
+		/*border:1px solid blue;*/
+	}
+	#gameDiv .loading{
+		background: #fefefe;
+	}
+	#gameDiv .beginStory{
+		background: #fefefe;
+	}
+	#gameDiv .gameStart{
+		background: #00b6f0;
+	}
+	#gameDiv .endStory{
+		background: #fefefe;
+	}
+	#footDiv{
+		background:#0a70b1;
+		width:100%;
+		height:35px;
+		position:absolute;
+	}
+	#footContent{
+		color:#fff;
+		font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+		font-size:16px;
+		text-align: center;
+		margin-top:10px;
+	}
+	#connectDiv{
+		background:#c9c9c9;
+		width:100%;
+		height:40px;
+		position:absolute;
+		overflow: hidden;
+	}
+	#fcTitle {
+		border:1px solid #b6b6b6;
+		background: #fff;
+		color:#777;
+		float:left;
+		width:112px;
+		height:30px;
+		font-size: 17px;
+		line-height: 30px;
+		text-align: center;
+		font-weight: bold;
+		margin-left: 2px;
+		box-shadow:-2px 2px 3px #aaa;
+	}
+	#fcContentDiv {
+		margin:1px 0 0 8px;
+		float:left;
+	}
+	#fcContentDiv input{
+		height:23px;
+		font-size: 16px;
+		line-height: 23px;
+		border-radius: 4px;
+		font-family: "";
+		/*text-align: center;*/
+		font-weight: bold;
+		color:#777;
+	}
+	#fcButton{
+		float:left;
+		width:92px;
+		height:28px;
+		font-size: 17px;
+		line-height: 26px;
+		margin: 2px 0 0 5px;
+		text-align: center;
+		background:#00b6f0;
+		text-align: center;
+		color:#fff;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow:-2px 2px 3px #aaa;
+	}
+	#fcButton:hover{
+		color:#eee;
+	}
+	#fcMail{
+		float:left;
+		margin-left:8px;
+		font-size: 17px;
+		line-height: 29px;
+		width:240px;
+		height:30px;
+		text-align: center;
+		background:#fff;
+		box-shadow:-2px 2px 3px #aaa;
+		font-weight: bold;
+	}
+	.orMail{
+		display: inline-block;
+		color:#777;
+	}
+	.hrMail{
+		display: inline-block;
+		color:#ff8498;
+	}
+</style>
 </head>
-<body>
-    <div id="game-container">
-        <img id="player" src="image.png" />
-        <div id="msg">
-            <h2>Oi khong tri nga roi nen cuu tri khong:</h2>
-            <button id="option1">Ke me tri</button>
-            <button id="option2">Cuu tri</button>
-        </div>
-        <div id="popup"></div>
-        <div 
-            id="mp4">
-            <video src="win.mp4" loop autoplay></video>
-        </div>
-        <div id="ending">
-            <h2>PC may sieu ngon</h2>
-            <p id="address"></p>
-        </div>
-    </div>
-<script src="game.js"></script>
+<body oncontextmenu="return false">
+<div id="container">
+	<div id="gameDiv">
+		<canvas id="gameCanvas"></canvas>
+	</div>
+	<div id="footDiv">
+		<div id="footContent"></div>
+	</div>
+</div>
+
+<script src="js/game.min.js"></script>
 </body>
 </html>
